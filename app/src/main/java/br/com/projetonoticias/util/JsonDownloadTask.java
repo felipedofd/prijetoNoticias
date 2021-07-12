@@ -37,4 +37,6 @@ public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
     @Override
     protected List<Article> doInBackground(String... params) {
         String url = params[0];
+        try {
+            URL requestUrl = new URL(url);
 }
