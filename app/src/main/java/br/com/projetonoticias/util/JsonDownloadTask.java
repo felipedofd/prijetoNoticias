@@ -33,4 +33,8 @@ public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
         dialog = ProgressDialog.show(context, "Carregando", "", true);
 
     }
+
+    @Override
+    protected List<Article> doInBackground(String... params) {
+        String url = params[0];
 }
