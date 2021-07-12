@@ -1,11 +1,10 @@
 package br.com.projetonoticias;
 
-import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 
-
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import br.com.projetonoticias.util.JsonDownloadTask;
 
@@ -13,8 +12,6 @@ import br.com.projetonoticias.util.JsonDownloadTask;
 public class MainActivity extends AppCompatActivity {
 
     private String apiKey = "ae68700d7dad43d0bc90bda8e85caa12";
-
-
 
 
     @Override
