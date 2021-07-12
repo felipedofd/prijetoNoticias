@@ -39,4 +39,16 @@ public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
         String url = params[0];
         try {
             URL requestUrl = new URL(url);
+
+
+            HttpURLConnection urlConnection = (HttpURLConnection) requestUrl.openConnection();
+            urlConnection.setReadTimeout(2000);
+            urlConnection.setConnectTimeout(2000);
+            urlConnection.setRequestProperty("User-Agent", "Bla");
+
+            int responseCode = urlConnection.getResponseCode();
+            if (responseCode > 400) {
+                throw new IOException("Error na comunicação do servidor");
+            }
+
 }
