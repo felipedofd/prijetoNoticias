@@ -20,9 +20,9 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         Log.d("FELIPE", "onCreate");
 
-        new JsonDownloadTask(this)
-                .execute("https://newsapi.org/v2/everything?apiKey=ae68700d7dad43d0bc90bda8e85caa12&q=Counter Strike&language=pt");
-
+        JsonDownloadTask thread = new JsonDownloadTask(this);
+        thread.execute("https://newsapi.org/v2/everything?apiKey=ae68700d7dad43d0bc90bda8e85caa12&q=Counter Strike&language=pt");
+        
     }
 
     @Override
