@@ -103,4 +103,15 @@ public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
 
         dialog.dismiss();
     }
+
+    private String toString(InputStream is) throws IOException {
+        byte[] bytes = new byte[1024];
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        int lidos;
+        while ((lidos = is.read(bytes)) > 0) {
+            baos.write(bytes, 0, lidos);
+        }
+        return new String(baos.toByteArray());
+    }
+
 }
