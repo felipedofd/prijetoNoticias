@@ -96,4 +96,11 @@ public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
 
         return articles;
     }
+
+    @Override
+    protected void onPostExecute(List<Article> articlesResponse) {
+        super.onPostExecute(articlesResponse);
+
+        dialog.dismiss();
+    }
 }
