@@ -26,4 +26,11 @@ public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
     public JsonDownloadTask(Context context) {
         this.context = context;
     }
+
+    @Override
+    protected void onPreExecute() {
+        super.onPreExecute();
+        dialog = ProgressDialog.show(context, "Carregando", "", true);
+
+    }
 }
