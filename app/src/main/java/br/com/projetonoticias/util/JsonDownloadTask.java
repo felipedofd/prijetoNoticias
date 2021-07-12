@@ -69,4 +69,31 @@ public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
         }
         return null;
     }
+
+    private List<Article> getArticles(JSONObject json) throws JSONException {
+        List<Article> articles = new ArrayList<>();
+
+        JSONArray articlesArray = json.getJSONArray("articles");
+        for (int i = 0; i < articlesArray.length(); i++) {
+            JSONObject article = articlesArray.getJSONObject(i);
+            String author = article.getString("author");
+            String title = article.getString("title");
+            String description = article.getString("description");
+            String url = article.getString("url");
+            String urlToImage = article.getString("urlToImage");
+            String publishedAt = article.getString("publishedAt");
+            String content = article.getString("content");
+            JSONObject source = article.getJSONObject("source");
+            String id = source.getString("id");
+            String name = source.getString("name");
+
+            Source newSource = new Source(id, name);
+            Article newArticle = new Article(newSource, author, title, description, url, urlToImage, publishedAt, content);
+            articles.add(newArticle);
+
+        }
+
+
+        return articles;
+    }
 }
