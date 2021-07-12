@@ -19,4 +19,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
+
+    private final Context context;
+    ProgressDialog dialog;
+
 }
