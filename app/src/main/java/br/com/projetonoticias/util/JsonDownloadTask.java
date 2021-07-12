@@ -51,4 +51,22 @@ public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
                 throw new IOException("Error na comunicação do servidor");
             }
 
+            InputStream inputStream = urlConnection.getInputStream();
+            BufferedInputStream in = new BufferedInputStream(urlConnection.getInputStream());
+
+            String jsonAsString = toString(in);
+            List<Article> articles = getArticles(new JSONObject(jsonAsString));
+            in.close();
+            return articles;
+
+
+        } catch (MalformedURLException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 }
