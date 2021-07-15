@@ -5,7 +5,13 @@ import android.util.Log;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import java.util.List;
+
+import br.com.projetonoticias.util.Article;
+import br.com.projetonoticias.util.ArticleAdapter;
 import br.com.projetonoticias.util.JsonDownloadTask;
 
 
