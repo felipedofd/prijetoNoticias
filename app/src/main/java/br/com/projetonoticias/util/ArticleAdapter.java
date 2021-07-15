@@ -64,3 +64,9 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
     }
 
     static class ArticleViewHolder extends RecyclerView.ViewHolder {
+        public ArticleViewHolder(View itemView) {
+            super(itemView);
+            titulo = itemView.findViewById(R.id.newsText);
+            imageNews = itemView.findViewById(R.id.newsImage);
+            source = itemView.findViewById(R.id.newsSource);
+        }
