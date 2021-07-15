@@ -57,3 +57,10 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
 
 
     }
+
+    @Override
+    public int getItemCount() {
+        return listaArtigos.size();
+    }
+
+    static class ArticleViewHolder extends RecyclerView.ViewHolder {
