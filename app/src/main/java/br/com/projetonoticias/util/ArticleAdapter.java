@@ -22,4 +22,10 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
         Picasso.get().load(urlToImage).into(holder.getImageNews());
         Source source = listaArtigos.get(position).source;
         holder.getImageNews().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_VIEW);
+                i.setData(Uri.parse(listaArtigos.get(position).url));
+                v.getContext().startActivity(i);
+
 
