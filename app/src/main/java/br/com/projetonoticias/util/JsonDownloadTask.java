@@ -20,11 +20,18 @@ import java.util.List;
 
 public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
 
+
+
     private final Context context;
     ProgressDialog dialog;
+    private NewsLoader newsLoader;
 
     public JsonDownloadTask(Context context) {
         this.context = context;
+    }
+    //
+    public void setNewsLoader (NewsLoader newsLoader) {
+        this.newsLoader = newsLoader;
     }
 
     @Override
@@ -88,8 +95,10 @@ public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
             String name = source.getString("name");
 
             Source newSource = new Source(id, name);
+
             Article newArticle = new Article(newSource, author, title, description, url, urlToImage, publishedAt, content);
             articles.add(newArticle);
+
 
         }
 
@@ -102,6 +111,9 @@ public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
         super.onPostExecute(articlesResponse);
 
         dialog.dismiss();
+        //listner
+        if (newsLoader != null)
+            newsLoader.onResult(articlesResponse);
     }
 
     private String toString(InputStream is) throws IOException {
@@ -113,5 +125,8 @@ public class JsonDownloadTask extends AsyncTask<String, Void, List<Article>> {
         }
         return new String(baos.toByteArray());
     }
+    public interface NewsLoader {
+        void onResult(List<Article> articlesResponses);
 
+    }
 }
