@@ -29,3 +29,11 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
                 v.getContext().startActivity(i);
 
 
+            }
+        });
+        if (source != null) {
+            holder.getSource().setText(source.name);
+        }
+
+
+    }
