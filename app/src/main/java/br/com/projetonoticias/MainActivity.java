@@ -33,6 +33,28 @@ public class MainActivity extends AppCompatActivity implements JsonDownloadTask.
 
 
         recyclerView = findViewById(R.id.lista);
+        refreshLayout = findViewById(R.id.refreshLayout);
+        searchView = findViewById(R.id.searchView);
+
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                buscarNoticias();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                buscarNoticias();
+                refreshLayout.setRefreshing(false);
+            }
+        });
 
 
         JsonDownloadTask thread = new JsonDownloadTask(this);
