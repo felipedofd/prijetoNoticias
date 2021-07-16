@@ -26,8 +26,12 @@ public class MainActivity extends AppCompatActivity implements JsonDownloadTask.
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+
+
         recyclerView = findViewById(R.id.lista);
 
 
