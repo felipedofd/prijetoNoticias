@@ -1,6 +1,7 @@
 package br.com.projetonoticias;
 
 import android.os.Bundle;
+import android.widget.SearchView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
