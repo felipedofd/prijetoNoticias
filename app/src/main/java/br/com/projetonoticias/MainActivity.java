@@ -59,6 +59,12 @@ public class MainActivity extends AppCompatActivity implements JsonDownloadTask.
 
     }
 
+    public void buscarNoticias() {
+        JsonDownloadTask thread = new JsonDownloadTask(MainActivity.this);
+        thread.setNewsLoader(MainActivity.this);
+        CharSequence perguntaUser = searchView.getQuery();
+        thread.execute("https://newsapi.org/v2/everything?apiKey=ae68700d7dad43d0bc90bda8e85caa12&q=" + perguntaUser + "&language=pt");
+    }
 
     @Override
     public void onResult(List<Article> articlesResponses) {
