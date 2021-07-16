@@ -18,8 +18,10 @@ import br.com.projetonoticias.util.JsonDownloadTask;
 
 public class MainActivity extends AppCompatActivity implements JsonDownloadTask.NewsLoader {
 
+    SwipeRefreshLayout refreshLayout;
     private String apiKey = "ae68700d7dad43d0bc90bda8e85caa12";
     private RecyclerView recyclerView;
+    private SearchView searchView;
 
 
     @Override
