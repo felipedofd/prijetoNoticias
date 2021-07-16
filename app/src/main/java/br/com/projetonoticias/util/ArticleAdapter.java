@@ -38,6 +38,8 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
     public void onBindViewHolder(@NonNull ArticleAdapter.ArticleViewHolder holder, int position) {
         String titulo = listaArtigos.get(position).title;
         holder.getTitulo().setText(titulo);
+        String description = listaArtigos.get(position).description;
+        holder.getDescription().setText(description);
         String urlToImage = listaArtigos.get(position).urlToImage;
         Picasso.get().load(urlToImage).into(holder.getImageNews());
         Source source = listaArtigos.get(position).source;
