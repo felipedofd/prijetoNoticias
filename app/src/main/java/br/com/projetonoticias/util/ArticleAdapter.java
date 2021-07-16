@@ -75,12 +75,13 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
         private final TextView titulo;
         private final ImageView imageNews;
         private final TextView source;
-
+        private final TextView description;
         public ArticleViewHolder(View itemView) {
             super(itemView);
             titulo = itemView.findViewById(R.id.newsText);
             imageNews = itemView.findViewById(R.id.newsImage);
             source = itemView.findViewById(R.id.newsSource);
+            description = itemView.findViewById(R.id.description);
         }
 
         public TextView getTitulo() {
@@ -94,6 +95,8 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
         public TextView getSource() {
             return source;
         }
+
+        public  TextView getDescription(){return description;}
     }
 
 }
