@@ -72,7 +72,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void buscarNoticias() {
-        
+
         CharSequence perguntaUser = searchView.getQuery();
         service.buscarArtigos(apiKey, perguntaUser.toString(), "pt").enqueue(new Callback<ArticlesResponse>() {
             @Override
