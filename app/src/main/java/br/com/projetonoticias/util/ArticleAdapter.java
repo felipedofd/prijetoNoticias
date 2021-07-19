@@ -111,6 +111,8 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
         }
 
         public  TextView getDescription(){return description;}
+
+        public ImageView getShareButton(){return shareButton;}
     }
 
 }
