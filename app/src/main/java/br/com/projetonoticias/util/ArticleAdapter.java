@@ -42,6 +42,17 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
         holder.getDescription().setText(description);
         String urlToImage = listaArtigos.get(position).urlToImage;
         Picasso.get().load(urlToImage).into(holder.getImageNews());
+        holder.getShareButton().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Intent.ACTION_SEND);
+                i.setType("text/plain");
+                i.putExtra(Intent.EXTRA_SUBJECT, description);
+                i.putExtra(Intent.EXTRA_TEXT,listaArtigos.get(position).url);
+                v.getContext().startActivity(Intent.createChooser(i, titulo));
+
+            }
+        });
         Source source = listaArtigos.get(position).source;
         holder.getImageNews().setOnClickListener(new View.OnClickListener() {
             @Override
