@@ -13,7 +13,6 @@ import java.util.List;
 
 import br.com.projetonoticias.util.Article;
 import br.com.projetonoticias.util.ArticleAdapter;
-import br.com.projetonoticias.util.JsonDownloadTask;
 import br.com.projetonoticias.util.ArticlesResponse;
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -28,14 +27,14 @@ public class MainActivity extends AppCompatActivity {
     private String apiKey = "ae68700d7dad43d0bc90bda8e85caa12";
     private RecyclerView recyclerView;
     private SearchView searchView;
-
+    private Retrofit retrofit;
+    private ArticleService service;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
 
         recyclerView = findViewById(R.id.lista);
