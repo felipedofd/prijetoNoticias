@@ -14,6 +14,12 @@ import java.util.List;
 import br.com.projetonoticias.util.Article;
 import br.com.projetonoticias.util.ArticleAdapter;
 import br.com.projetonoticias.util.JsonDownloadTask;
+import br.com.projetonoticias.util.ArticlesResponse;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+import retrofit2.Retrofit;
+import retrofit2.converter.gson.GsonConverterFactory;
 
 
 public class MainActivity extends AppCompatActivity implements JsonDownloadTask.NewsLoader {
