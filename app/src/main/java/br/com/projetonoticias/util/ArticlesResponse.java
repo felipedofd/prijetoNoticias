@@ -15,5 +15,10 @@ public class ArticlesResponse {
         this.totalResults = totalResults;
         this.articles = articles;
 
+
+    }
+
+    public List<Article> getArticles() {
+        return articles;
     }
 }
