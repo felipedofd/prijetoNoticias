@@ -95,6 +95,7 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
             imageNews = itemView.findViewById(R.id.newsImage);
             source = itemView.findViewById(R.id.newsSource);
             description = itemView.findViewById(R.id.description);
+            shareButton = itemView.findViewById(R.id.shareButton);
         }
 
         public TextView getTitulo() {
