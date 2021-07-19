@@ -40,6 +40,13 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.lista);
         refreshLayout = findViewById(R.id.refreshLayout);
         searchView = findViewById(R.id.searchView);
+        retrofit = new Retrofit.Builder()
+                .baseUrl(ArticleService.BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build();
+
+        service = retrofit.create(ArticleService.class);
+
 
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
