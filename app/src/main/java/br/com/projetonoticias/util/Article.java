@@ -11,6 +11,7 @@ public class Article {
     private String publishedAt;
     private String content;
 
+    public Article(Source source, String author, String title, String description, String url, String urlToImage, String publishedAt, String content) {
         this.source = source;
         this.author = author;
         this.title = title;
