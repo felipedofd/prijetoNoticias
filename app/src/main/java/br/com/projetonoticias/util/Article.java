@@ -2,6 +2,15 @@ package br.com.projetonoticias.util;
 
 public class Article {
 
+    private Source source;
+    private String author;
+    private String title;
+    private String description;
+    private String url;
+    private String urlToImage;
+    private String publishedAt;
+    private String content;
+
         this.source = source;
         this.author = author;
         this.title = title;
