@@ -87,6 +87,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onResult(List<Article> articlesResponses) {
+        binding.lista.setLayoutManager(new LinearLayoutManager(this, RecyclerView.VERTICAL, false));
+        binding.lista.setAdapter(new ArticleAdapter(articlesResponses));
     }
 }
 
