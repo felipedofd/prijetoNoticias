@@ -2,14 +2,6 @@ package br.com.projetonoticias.util;
 
 public class Article {
 
-    Source source;
-    String author;
-    String title;
-    String description;
-    String url;
-    String urlToImage;
-    String publishedAt;
-    String content;
 
     public Article(Source source, String author, String title, String description, String url, String urlToImage, String publishedAt, String content){
         this.source = source;
