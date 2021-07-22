@@ -6,9 +6,9 @@ import retrofit2.http.GET;
 
 public class ArticlesResponse {
 
-    String status;
-    String totalResults;
-    List<Article> articles;
+    private String status;
+    private String totalResults;
+    private List<Article> articles;
 
     public ArticlesResponse(String status, String totalResults, List<Article> articles) {
         this.status = status;
