@@ -20,10 +20,6 @@ public class Article {
         this.urlToImage = urlToImage;
         this.publishedAt = publishedAt;
         this.content = content;
-
-
-
-
     }
 }
 
