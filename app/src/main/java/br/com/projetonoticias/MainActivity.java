@@ -44,7 +44,6 @@ public class MainActivity extends AppCompatActivity {
         service = retrofit.create(ArticleService.class);
 
 
-        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
         binding.searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
