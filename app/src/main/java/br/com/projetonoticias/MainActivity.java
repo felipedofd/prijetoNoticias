@@ -33,11 +33,7 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
 
-        recyclerView = findViewById(R.id.lista);
-        refreshLayout = findViewById(R.id.refreshLayout);
-        searchView = findViewById(R.id.searchView);
         retrofit = new Retrofit.Builder()
                 .baseUrl(ArticleService.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
