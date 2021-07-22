@@ -11,6 +11,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import java.util.List;
 
+import br.com.projetonoticias.databinding.ActivityMainBinding;
 import br.com.projetonoticias.util.Article;
 import br.com.projetonoticias.util.ArticleAdapter;
 import br.com.projetonoticias.util.ArticlesResponse;
