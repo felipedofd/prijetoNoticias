@@ -27,6 +27,7 @@ public class MainActivity extends AppCompatActivity {
     private String apiKey = "ae68700d7dad43d0bc90bda8e85caa12";
     private Retrofit retrofit;
     private ArticleService service;
+    private ActivityMainBinding binding;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
