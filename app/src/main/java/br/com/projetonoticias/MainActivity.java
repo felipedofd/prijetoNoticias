@@ -24,10 +24,7 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    SwipeRefreshLayout refreshLayout;
     private String apiKey = "ae68700d7dad43d0bc90bda8e85caa12";
-    private RecyclerView recyclerView;
-    private SearchView searchView;
     private Retrofit retrofit;
     private ArticleService service;
 
