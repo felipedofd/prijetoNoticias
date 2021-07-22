@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onRefresh() {
                 buscarNoticias();
-                refreshLayout.setRefreshing(false);
+                binding.refreshLayout.setRefreshing(false);
             }
         });
 
