@@ -2,8 +2,6 @@ package br.com.projetonoticias.util;
 
 import java.util.List;
 
-import retrofit2.http.GET;
-
 public class ArticlesResponse {
 
     private String status;
