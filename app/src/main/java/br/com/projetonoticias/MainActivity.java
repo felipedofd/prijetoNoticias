@@ -56,7 +56,6 @@ public class MainActivity extends AppCompatActivity {
                 return false;
             }
         });
-        refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
                 buscarNoticias();
