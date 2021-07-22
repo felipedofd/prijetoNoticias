@@ -33,6 +33,8 @@ public class MainActivity extends AppCompatActivity {
     public void onCreate(@Nullable Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+        binding = ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
 
         retrofit = new Retrofit.Builder()
                 .baseUrl(ArticleService.BASE_URL)
