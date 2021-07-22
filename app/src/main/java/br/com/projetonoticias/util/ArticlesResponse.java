@@ -12,8 +12,6 @@ public class ArticlesResponse {
         this.status = status;
         this.totalResults = totalResults;
         this.articles = articles;
-
-
     }
 
     public List<Article> getArticles() {
