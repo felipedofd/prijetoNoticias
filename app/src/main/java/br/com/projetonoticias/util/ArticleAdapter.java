@@ -36,11 +36,11 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
 
     @Override
     public void onBindViewHolder(@NonNull ArticleAdapter.ArticleViewHolder holder, int position) {
-        String titulo = listaArtigos.get(position).title;
+        String titulo = listaArtigos.get(position).getTitle();
         holder.getTitulo().setText(titulo);
-        String description = listaArtigos.get(position).description;
+        String description = listaArtigos.get(position).getDescription();
         holder.getDescription().setText(description);
-        String urlToImage = listaArtigos.get(position).urlToImage;
+        String urlToImage = listaArtigos.get(position).getUrlToImage();
         Picasso.get().load(urlToImage).into(holder.getImageNews());
         holder.getShareButton().setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,17 +48,17 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
                 Intent i = new Intent(Intent.ACTION_SEND);
                 i.setType("text/plain");
                 i.putExtra(Intent.EXTRA_SUBJECT, description);
-                i.putExtra(Intent.EXTRA_TEXT,listaArtigos.get(position).url);
+                i.putExtra(Intent.EXTRA_TEXT, listaArtigos.get(position).getUrl());
                 v.getContext().startActivity(Intent.createChooser(i, titulo));
 
             }
         });
-        Source source = listaArtigos.get(position).source;
+        Source source = listaArtigos.get(position).getSource();
         holder.getImageNews().setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Intent.ACTION_VIEW);
-                i.setData(Uri.parse(listaArtigos.get(position).url));
+                i.setData(Uri.parse(listaArtigos.get(position).getUrl()));
                 v.getContext().startActivity(i);
 
 
@@ -110,9 +110,13 @@ public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ArticleV
             return source;
         }
 
-        public  TextView getDescription(){return description;}
+        public TextView getDescription() {
+            return description;
+        }
 
-        public ImageView getShareButton(){return shareButton;}
+        public ImageView getShareButton() {
+            return shareButton;
+        }
     }
 
 }
